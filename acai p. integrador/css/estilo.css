@@ -113,9 +113,16 @@ footer{
 
 
 table img{
-	width:400px;
-	height: 400px;
+	width:350px;
+	height: 350px;
 	margin:50px;
 	border: 4px solid #6a0000;
 	border-radius:15px;
+}
+table, tbody, td,td{
+	width:100%;
+}
+table, tr{
+	align-items:center;
+	justify-content:center;
 }

@@ -1,10 +1,12 @@
 
-$("body").ready(function(){
+$("html").ready(function(){
 	
 $("#curiosidades").click(function(){ 
 		$("main").slideDown(2000)
 		$("#cur").css("display", "flex"),
-		$("table").css("display", "none")
+		$("#cur").fadeOut(0),
+		$("#cur").fadeIn(2000),
+		$("#fotos").css("display", "none")
 	}  
 	);
 
@@ -17,29 +19,23 @@ $("footer").click(function(){
 
 $("#galeria").click(function(){
 	$("main").slideDown(400),
-	$("main table, tr").css("display", "flex"),
-		$("main #cur").css("display", "none"),
-		    $.getJSON('json/dados.json', function(json) {
-                 $("tr").append(`
-            <td><img src="${dados.imagens}"></td>
-            `)
-          console.log(dados.imagens);
-    
-      });
-});
+	$("#fotos").css("display", "flex"),
+	$("#fotos").fadeOut(0),
+	$("#fotos").fadeIn(2000),
+		$("main #cur").css("display", "none")
 
-
-
-
-
-//Valor retornado: Verde Amarelo Azul Branco
-cores = ["Verde", "Amarelo", "Azul", "Branco"];
+		     });
+			$("#fotos").css("display", "none"),
+		   $.getJSON('json/dados.json', function(json) {
+		    	for(i = 0; i < 3; i++){
+                 $("#fotos").append(`
+                 	<picture>
+                 		<source srcset="${json.imagens[i].im}" type="image/svg+xml">
+  						<img src="${json.imagens[i].im}" class="img-fluid img-thumbnail" alt="...">
+  					
+            `) }
+ });
  
-function imprimir(item) {
-    console.log(item); 
-}
- 
-cores.forEach(imprimir);
 
  });
 

@@ -2,11 +2,10 @@
 
 {
 	"imagens":[
-	{
-		"im1":"imagens/galeria1.jpg",
-		"im2":"imagens/galeria2.jpg",
-		"im3":"imagens/galeria3.jpg"
+			{"im":"imagens/galeria1.jpg"},
+		{"im":"imagens/galeria2.jpg"},
+		{"im":"imagens/galeria3.jpg"}
 		
-	}	
+		
 ]
 }
